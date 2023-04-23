@@ -1,0 +1,69 @@
+{
+  "name": "cargo2000",
+  "db": "neo4j",
+  "nodes": [
+    {
+      "source": "airports",
+      "label_field": "label",
+      "key_field": "node_id",
+      "properties": {
+        "x": "x",
+        "y": "y",
+	"airport_id": "airport_id"
+      }
+    },
+    {
+      "source": "departure_warehouse",
+      "label_field": "label",
+      "key_field": "node_id"
+    },
+    {
+      "source": "transfer_point",
+      "label_field": "label",
+      "key_field": "node_id"
+    },
+    {
+      "source": "arrival_warehouse",
+      "label_field": "label",
+      "key_field": "node_id"
+    },
+    {
+      "source": "departure_point",
+      "label_field": "label",
+      "key_field": "node_id"
+    },
+    {
+      "source": "destination",
+      "label_field": "label",
+      "key_field": "node_id"
+    },
+    {
+      "source": "entry_point",
+      "label_field": "label",
+      "key_field": "node_id"
+    }
+  ],
+  "edges": [
+    {
+      "source": "sends_to",
+      "type_field": "relationship_type",
+      "source_field": "source_node_id",
+      "target_field": "target_node_id",
+      "properties": {
+	"flight_cnt": "flightCount"
+      }
+    },
+    {
+      "source": "located_at",
+      "type_field": "relationship_type",
+      "source_field": "source_node_id",
+      "target_field": "target_node_id"
+    },
+    {
+      "source": "transport",
+      "type_field": "relationship_type",
+      "source_field": "source_node_id",
+      "target_field": "target_node_id"
+    }
+  ]
+}
